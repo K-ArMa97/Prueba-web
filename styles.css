@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    background-color: black; /* fondo negro solo para el body */
+}
+#burger-icon {
+    width: 20px;
+    height: 20px;
+    align-content: start;
+    display: none;
+    color: white;
+}
+
+nav {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+}
+li > a {
+    text-decoration: none;
+    color: white;
+}
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+
+    padding: 0;
+}
+
+p {
+    width: 150px;
+    color: white;
+    align-items: center;
+    margin: 20px 0 0 20px;
+}
+
+@media screen and (max-width: 468px) {
+    nav {
+        justify-content: flex-start;
+    }
+
+    #burger-icon {
+        display: block;
+        align-content: start;
+        margin-left: 5px;
+        z-index: 1002;
+        cursor: pointer;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    ul.menu.open ~ #burger-icon,
+    ul.menu.close ~ #burger-icon {
+        color: black;
+    }
+
+    ul.menu {
+        display: none;
+    }
+
+    ul.menu.open,
+    ul.menu.close {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1000;
+        align-items: center;
+    }
+
+    ul.menu.open li > a,
+    ul.menu.close li > a {
+        color: black;
+        font-size: 20px;
+    }
+
+    ul.menu.open {
+        animation: slideIn 0.6s ease-out forwards;
+    }
+    ul.menu.close {
+        animation: slideOut 0.9s ease-in forwards;
+    }
+
+    ul.menu.open li {
+        opacity: 0;
+        transform: translateY(-30px);
+        animation: itemSlideIn 0.5s ease-in forwards;
+    }
+
+    ul.menu.open li:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+    ul.menu.open li:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+    ul.menu.open li:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+    ul.menu.open li:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+    ul.menu.open li:nth-child(5) {
+        animation-delay: 1s;
+    }
+
+    ul.menu.close li {
+        opacity: 1;
+        transform: translateY(0);
+        animation: itemSlideOut 0.5s ease-out forwards;
+    }
+
+    ul.menu.close li:nth-child(1) {
+        animation-delay: 0.4s;
+    }
+    ul.menu.close li:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+    ul.menu.close li:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+    ul.menu.close li:nth-child(4) {
+        animation-delay: 0.1s;
+    }
+    ul.menu.close li:nth-child(5) {
+        animation-delay: 0s;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 0.8;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            opacity: 0.8;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes itemSlideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes itemSlideOut {
+        from {
+            opacity: 0.8;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+    }
+}
