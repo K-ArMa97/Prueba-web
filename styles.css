@@ -32,6 +32,7 @@ body {
         sans-serif;
     font-size: var(--font-size-lg);
 }
+/* NAVEGADOR */
 button {
     background: none;
     border: none;
@@ -42,6 +43,7 @@ button {
 nav {
     display: flex;
     padding: var(--spacing-md);
+    position: relative;
 }
 a {
     text-decoration: none;
@@ -55,43 +57,83 @@ li {
 }
 .menu-logo {
     z-index: 101;
-    transition: var(--color-white) linear 0.5s;
+}
+.menu-logo.menu-active {
+    color: var(--color-white);
+}
+.menu-logo svg {
+    transition: color 0.4s ease;
+}
+.menu-logo button {
+    color: inherit;
+    transition: color 0.4s ease;
 }
 .nav-links {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 4rem;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--color-blue);
+    transform: translateY(-100%);
+    animation: slideOut 0.4s forwards;
 }
 .nav-links.open {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     background-color: var(--color-blue);
     z-index: 100;
     animation: slideIn 0.4s forwards;
 }
-
-.nav-links.close {
-    /* ERROR DEL SLIDEOUT EN EL ESTADO "CLOSE" */
-    /* SEGUN COPILOT, ES EL DISPLAY QUE SE ENCUENTRA EN NONE */
-    animation: slideOut 0.4s forwards;
-}
-
-.nav-links.open li > a,
-.nav-links.open h3 {
+.nav-links a,
+h3 {
+    display: block;
     color: var(--color-white);
+    line-height: 3rem;
+    padding-left: 1rem;
+}
+.nav-links li a,
+.nav-links h3 {
     font-size: var(--font-size-lg);
+    font-weight: normal;
 }
-.nav-links {
-    padding-top: 3rem;
+.nav-links.nav-link-register a {
+    font-size: var(--font-size-sm);
 }
+.more-ableton-links li a {
+    font-size: var(--font-size-sm);
+}
+.more-ableton-links.last-links {
+    display: grid;
+    grid-template-columns: repeat(4, 50vw);
+    padding-bottom: 1.5rem;
+    overflow-x: auto;
+    position: relative;
+}
+.more-ableton-links.last-links::after {
+    content: "";
+    position: fixed;
+    width: 2.5rem;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0), var(--color-blue));
+    pointer-events: none;
+}
+.more-ableton-links.last-links h4,
+p {
+    line-height: 1.5rem;
+}
+
 @keyframes slideIn {
     from {
         transform: translateY(-100%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
