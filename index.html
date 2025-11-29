@@ -159,142 +159,33 @@
                             </h1>
                             <p>
                                 <span class="title-principal text-underline"
-                                    >Get up to 25% off until Dec 2 > ></span
+                                    >Get up to 25% off until Dec 2 ></span
                                 >
                             </p>
                         </a>
                     </article>
                 </div>
             </section>
-            <section>
-                <h2>Panel blog teaser</h2>
-                <div>
-                    <div class="celda">
-                        <div class="post primero">
-                            <a href=""><div class="imagen">IMAGEN</div></a>
-                            <div>
-                                <h3>
-                                    <a href="">
-                                        <span>View posts in category:</span>
-                                        <span>Downloads</span>
-                                    </a>
-                                </h3>
-                                <h2>
-                                    <a href="">
-                                        James Holden & Wactaw Zimpel: Processing
-                                        Transcendence
-                                    </a>
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="celda">
-                        <div class="post segundo">
-                            <a href=""><div class="imagen">IMAGEN</div></a>
-                            <div>
-                                <h3>
-                                    <a href="">
-                                        <span>View posts in category:</span>
-                                        <span>Tutorials</span>
-                                    </a>
-                                </h3>
-                                <h2>
-                                    <a href="">
-                                        Explore Micro-Sound Design in Granulator
-                                        III with dnksaus
-                                    </a>
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="celda">
-                        <div class="post tercero">
-                            <a href=""><div class="imagen">IMAGEN</div></a>
-                            <div>
-                                <h3>
-                                    <a href="">
-                                        <span>View posts in category:</span>
-                                        <span>Downloads</span>
-                                    </a>
-                                </h3>
-                                <h2>
-                                    <a href=""> Input / Output: MXGPU </a>
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#all_post">See all posts</a>
+            <section class="panel-blog">
+                <h2>The latest from Ableton</h2>
+                <div class="blog-post" id="render-posts">
+                    <!-- CONTENIDO GENERADO POR TEMPLATE -->
                 </div>
+                <a href="#all_post" class="see_all">See all posts ></a>
             </section>
-            <section>
+            <section class="panel-blog">
                 <h2>En foco: Move</h2>
-                <div>
-                    <div class="celda">
-                        <a href="">
-                            <div class="imagen">Imagen</div>
-                            <div>
-                                <h2>
-                                    Building a Funk-Flavored Beat with Ableton
-                                    Move
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="celda">
-                        <a href="">
-                            <div class="imagen">Imagen</div>
-                            <div>
-                                <h2>
-                                    Flip Samples from Your Phone with Move's
-                                    Latest Update
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="celda">
-                        <div class="imagen">Imagen</div>
-                        <div>
-                            <h2>Your Move Questions, Answered</h2>
-                        </div>
-                    </div>
+                <div class="blog-post" id="render-posts-2">
+                    <!-- CONTENIDO GENERADO POR TEMPLATE -->
                 </div>
             </section>
-            <section>
+            <section class="panel-blog">
                 <h2>Más información sobre Live 12</h2>
-                <div>
-                    <div class="celda">
-                        <a href="">
-                            <div class="imagen">Imagen</div>
-                            <div>
-                                <h2>
-                                    Live 12.3 is coming - with Stem Separation
-                                    an more
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="celda">
-                        <a href="">
-                            <div class="imagen">Imagen</div>
-                            <div>
-                                <h2>
-                                    Discover Live 12.3's Upcoming Features with
-                                    Seed To Stage
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="celda">
-                        <a href="">
-                            <div class="imagen">Imagen</div>
-                            <div>
-                                <h2>Watch the Learn Live 12 Videos</h2>
-                            </div>
-                        </a>
-                    </div>
+                <div class="blog-post" id="render-posts-3">
+                    <!-- CONTENIDO GENERADO POR TEMPLATE -->
                 </div>
             </section>
-            <section>
+            <section class="panel-blog-categories">
                 <strong>More:</strong>
                 <a href="">All posts</a>
                 <a href="">Artistas</a>
@@ -305,6 +196,31 @@
                 <a href="">Loop</a>
                 <a href="">One Thing</a>
             </section>
+
+            <!-- TEMPLATE -->
+            <template id="post-template">
+                <div class="celda">
+                    <div class="post">
+                        <a href="">
+                            <div class="imagen"></div>
+                        </a>
+                        <div class="post-texto">
+                            <h3>
+                                <a href="">
+                                    <span class="categoria"
+                                        ><!-- Texto linkeable --></span
+                                    >
+                                </a>
+                            </h3>
+                            <h2>
+                                <a href="" class="descripcion"
+                                    ><!-- Texto adicional --></a
+                                >
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </template>
         </main>
         <footer>
             <div class="footer_separator"></div>
